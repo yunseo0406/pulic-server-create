@@ -12,6 +12,12 @@
 - **Public IP**: 서버에 연결
 
 ## 사용 방법
+0. **개인 .env 파일 작성**
+   ncp api 인증키 access key, secret key .env 파일에 작성
+   ```env
+   export NCLOUD_ACCESS_KEY="본인 access key 작성"
+   export NCLOUD_SECRET_KEY="본인 secret key 작성"
+   ```
 
 1. **Terraform 초기화**
    ```bash
