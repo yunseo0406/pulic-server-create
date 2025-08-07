@@ -1,12 +1,12 @@
 # VPC 생성
 resource "ncloud_vpc" "yunseo_vpc" {
-  name             = "yunseo_vpc"
+  name             = "yunseo-vpc"
   ipv4_cidr_block  = "10.0.0.0/16"
 }
 
 # Subnet 생성
 resource "ncloud_subnet" "public_subnet" {
-  name             = "public_subnet"
+  name             = "public-subnet"
   vpc_no           = ncloud_vpc.yunseo_vpc.id
   subnet           = "10.0.1.0/24"
   zone             = "KR-2"
@@ -21,7 +21,7 @@ resource "ncloud_access_control_group" "acg" {
     vpc_no = ncloud_vpc.yunseo_vpc.id
 }
 
-resource "ncloud_access_control_group_rule" "acg-rule" {
+resource "ncloud_access_control_group_rule" "acg_rule" {
   access_control_group_no = ncloud_access_control_group.acg.id
   
   inbound {
@@ -33,7 +33,6 @@ resource "ncloud_access_control_group_rule" "acg-rule" {
   inbound {
     protocol    = "ICMP"
     ip_block    = "0.0.0.0/0"
-    port_range  = ""
   }
 
   outbound {
