@@ -30,7 +30,7 @@
 
 4. **SSH Key(.pem) 파일 저장**
    - 최초 적용 시 출력되는 private key를 복사하여 `yunseo-key.pem` 파일로 저장
-   - 예시 output 추가:
+   - output 코드 (keypair.tf 안에 포함):
      ```terraform
      output "private_key" {
        value     = ncloud_login_key.key.private_key
