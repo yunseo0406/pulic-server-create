@@ -47,11 +47,14 @@
      ```bash
      terraform output private_key
      ```
+   - yunseo-key.pem 파일 사용
+     ncp 콘솔 창 > server > [서버 관리 및 설정 변경] > [관리자 비밀번호] 
+     yunseo-key.pem 파일 넣어 관리자 이름, 비밀번호 확인
+
 
 5. **서버 접속**
-   ```bash
-   ssh -i yunseo-key.pem ubuntu@<할당된_공인_IP>
-   ```
+   ssh 접속 후 `ping -c 3 8.8.8.8`로 연결 확인
+   > 잘 나오면 성공
 
 ## 파일 설명
 
